@@ -6,11 +6,12 @@ var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHei
 
 // create a renderer using the THREE.WebGLRenderer class
 var renderer = new THREE.WebGLRenderer();
+renderer.antialias = true;
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-// create a pyramid-shaped geometry using the THREE.CylinderGeometry class
-var geometry = new THREE.CylinderGeometry(0, 1, 1, 4, 1, true);
+// create a pyramid-shaped geometry using the THREE.ConeGeometry class
+var geometry = new THREE.ConeGeometry(1, 1, 4);
 
 // create a material for the pyramid using the THREE.MeshLambertMaterial class
 var material = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
